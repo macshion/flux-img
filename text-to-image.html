@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Art Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-brand">AI Image Generator</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="text-to-image.html">Generator</a>
+                <a href="pricing.html">Price</a>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html" class="auth-btn login-btn">Login</a>
+                <a href="signup.html" class="auth-btn signup-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tool-section">
+            <div class="tool-header">
+                <h1>Create Your <span class="gradient-text">AI Masterpiece</span></h1>
+                <p class="tool-subtitle">Transform your imagination into stunning visuals</p>
+            </div>
+            <div class="tool-container">
+                <!-- 左侧输入区 -->
+                <div class="input-area">
+                    <div class="input-header">
+                        <h2>Enter Your Prompt</h2>
+                        <p class="input-tip">Describe what you want to create in detail</p>
+                    </div>
+                    <textarea id="prompt-input" placeholder="Example: A magical forest at sunset with glowing fireflies, digital art style..."></textarea>
+                    <button id="generate-btn">
+                        <span class="btn-icon">✨</span>
+                        Generate Image
+                    </button>
+                </div>
+                
+                <!-- 右侧生成区 -->
+                <div class="generation-area">
+                    <div class="generating-area">
+                        <h2>Currently Generating</h2>
+                        <div class="image-row" id="generating-image">
+                            <div class="image-placeholder">1</div>
+                            <div class="image-placeholder">2</div>
+                            <div class="image-placeholder">3</div>
+                            <div class="image-placeholder">4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 已生成图片展示区 -->
+        <section class="gallery-section">
+            <div class="gallery-container">
+                <h2>Your Generated Images</h2>
+                <div class="image-gallery" id="image-list">
+                    <div class="image-placeholder">1</div>
+                    <div class="image-placeholder">2</div>
+                    <div class="image-placeholder">3</div>
+                    <div class="image-placeholder">4</div>
+                    <div class="image-placeholder">5</div>
+                    <div class="image-placeholder">6</div>
+                    <div class="image-placeholder">7</div>
+                    <div class="image-placeholder">8</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+        </div>
+        <p>© 2024 AI Image Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
