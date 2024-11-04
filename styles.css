@@ -1004,126 +1004,83 @@ footer {
     }
 }
 
-/* Generator 页面的移动端适配 */
+/* Generator 页面的移动端适配更新 */
 @media (max-width: 768px) {
     /* 工具页面布局调整 */
     .tool-section {
-        padding: 2rem 1rem;
+        padding: 2rem 0;  /* 减少左右内边距 */
+        width: 100%;
+        overflow-x: hidden;  /* 防止横向滚动 */
     }
 
-    .tool-header {
-        margin-bottom: 2rem;
-    }
-
-    .tool-header h1 {
-        font-size: 2rem;
-    }
-
-    .tool-subtitle {
-        font-size: 1rem;
-        padding: 0 1rem;
+    .tool-container {
+        width: 100%;
+        padding: 0 1rem;  /* 添加统一的左右内边距 */
     }
 
     /* 输入区域调整 */
     .input-area {
-        padding: 1.5rem 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .input-header h2 {
-        font-size: 1.3rem;
-    }
-
-    #prompt-input {
-        min-height: 120px;
-        font-size: 0.9rem;
-    }
-
-    #generate-btn {
         width: 100%;
-        padding: 0.8rem;
-        font-size: 1rem;
+        padding: 1rem;
+        margin: 0;
+        border-radius: 8px;
     }
 
     /* 生成区域调整 */
     .generation-area {
-        padding: 1.5rem 1rem;
+        width: 100%;
+        padding: 1rem;
+        margin: 0;
+        border-radius: 8px;
     }
 
-    .generation-area h2 {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-    }
-
-    /* 图片展示区调整 */
+    /* 图片行容器调整 */
     .image-row {
-        gap: 0.8rem;
+        width: 100%;
         padding: 0.5rem 0;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE and Edge */
-    }
-
-    .image-row::-webkit-scrollbar {
-        display: none; /* Chrome, Safari and Opera */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);  /* 改为网格布局，每行两张图片 */
+        gap: 0.8rem;
+        overflow-x: hidden;
     }
 
     .image-placeholder {
-        min-width: 140px;
-        height: 140px;
-        font-size: 1.2rem;
+        width: 100%;  /* 宽度改为100% */
+        min-width: unset;  /* 移除最小宽度限制 */
+        aspect-ratio: 1;  /* 保持正方形比例 */
+        height: auto;  /* 高度自适应 */
     }
 
     /* 图片画廊区域调整 */
     .gallery-section {
         padding: 2rem 1rem;
+        width: 100%;
+        overflow-x: hidden;
     }
 
-    .gallery-container h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
+    .gallery-container {
+        width: 100%;
     }
 
     .image-gallery {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);  /* 每行两张图片 */
         gap: 0.8rem;
     }
 }
 
 /* 超小屏幕的额外优化 */
 @media (max-width: 360px) {
+    .image-row, .image-gallery {
+        grid-template-columns: repeat(2, 1fr);  /* 保持每行两张图片 */
+    }
+
     .tool-header h1 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        padding: 0 1rem;
     }
 
-    .image-placeholder {
-        min-width: 120px;
-        height: 120px;
-    }
-
-    #generate-btn {
-        font-size: 0.9rem;
-    }
-}
-
-/* 横屏模式优化 */
-@media (max-width: 768px) and (orientation: landscape) {
-    .tool-section {
-        padding: 1rem;
-    }
-
-    .tool-container {
-        gap: 1rem;
-    }
-
-    .image-row {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-
-    .image-placeholder {
-        min-width: 120px;
-        height: 120px;
+    .input-area, .generation-area {
+        padding: 0.8rem;
     }
 } 
